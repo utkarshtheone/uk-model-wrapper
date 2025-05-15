@@ -1,15 +1,19 @@
 import time
 import math
 from typing import List
+from lib.logger import get_logger
+
+logger = get_logger("utils")
 
 def _mock_io_bound_operation() -> None:
     """
     Simulates an I/O-bound operation with a delay.
     """
     # This delay can be assumed to be unavoidable, and may not be constant in a real world situation.
-    print("Performing mock I/O-bound operation...")
+    logger.debug("Starting mock I/O-bound operation...")
+    start = time.time()
     time.sleep(3)  # Simulate waiting for an external resource or a slow I/O operation
-    print("Mock I/O-bound operation completed.")
+    logger.debug(f"I/O-bound operation completed in {time.time() - start:.2f}s")
 
 def _data_formatting(data: List[float]) -> float:
     """
@@ -26,12 +30,15 @@ def _data_formatting(data: List[float]) -> float:
 def preprocessing_operations(data: List[float]) -> str:
     """Pre-processing the data for the model, via two independent steps."""
 
-    print(f"Performing preprocessing operation on: {data}")
+    logger.info(f"Starting preprocessing for data: {data}")
+    start = time.time()
 
     _mock_io_bound_operation()
-
+    io_end = time.time()
     final_result = _data_formatting(data)
-
+    end = time.time()
+    
     result = str(final_result)
-    print(f"Preprocessing operation completed with final result: {result}")
+    logger.debug(f"Preprocessing - I/O: {io_end - start:.2f}s, Compute: {end - io_end:.2f}s, Total: {end - start:.2f}s")
+    logger.info(f"Preprocessing completed with final result: {result}")
     return result
