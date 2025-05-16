@@ -16,3 +16,10 @@ Average send time: 0.0001 seconds per message.
 Using the timeout of 60 seconds to wait for responses.
 
 
+Sent 10000 messages in 0.80 seconds.
+Average send time: 0.0001 seconds per message.
+
+
+Sent 100000 messages in 7.86 seconds.
+Average send time: 0.0001 seconds per message.
+Using the timeout of 60 seconds to wait for responses.
