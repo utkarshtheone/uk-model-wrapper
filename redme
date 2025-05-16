@@ -1,2 +1,15 @@
 #checking git from this 
 
+Docker command to run the application
+
+docker run -d --name worker --link rabbitmq:rabbitmq --cpus=1 -m 512m python-worker
+
+command to activate venv in windows
+
+.\venv\Scripts\Activate.ps1
+
+
+Consider using Python's concurrency features to handle multiple messages concurrently.
+Threading (threading module): Might be suitable for the CPU-bound part of the preprocessing_operation or for handling multiple incoming messages. Be mindful of the Global Interpreter Lock (GIL) for purely CPU-bound tasks in CPython.
+Asynchronous Programming (asyncio module): Could be beneficial for the simulated I/O-bound operation (the time.sleep).
+Multiprocessing (multiprocessing module): Can be used to leverage multiple CPU cores by creating separate processes. This is often a good choice for CPU-bound tasks as it bypasses the GIL.
