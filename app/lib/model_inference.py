@@ -1,5 +1,7 @@
 import onnxruntime
 import numpy as np
+import time
+import asyncio
 from typing import Any, List
 from lib.logger import get_logger
 
@@ -28,3 +30,10 @@ class ONNXModelWrapper:
         logger.debug(f"Inference completed in {end - start:.2f}s with output: {ort_outputs}")
         logger.info(f"ONNX model inference completed with output: {ort_outputs}")
         return ort_outputs[0].tolist()
+
+    async def predict_async(self, data: Any) -> List[float]:
+    
+    
+        logger.debug(f"Starting async inference on: {data}")
+        loop = asyncio.get_event_loop()
+        return await loop.run_in_executor(None, self.predict, data)
