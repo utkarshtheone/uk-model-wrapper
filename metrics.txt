@@ -32,3 +32,32 @@ Sent 1000 messages...
 Sent 1000 messages in 0.09 seconds.
 Average send time: 0.0001 seconds per message.
 Using the timeout of 60 seconds to wait for responses.
+
+--- Processing Metrics ---
+Number of responses received: 10/10
+Average Pick-Up Latency: 0.1072 seconds
+Average Processing Latency: 1.8351 seconds
+Average Total Latency (Send to Response): 1.9423 seconds
+Total Processing Time: 2.1629 seconds
+
+--- Processing Metrics ---
+Number of responses received: 10/10
+Average Pick-Up Latency: 0.0507 seconds
+Average Processing Latency: 1.7295 seconds
+Average Total Latency (Send to Response): 1.7802 seconds
+Total Processing Time: 1.9562 seconds
+(venv) PS E:\projects\blue_optima\uk-mo
+
+--- Processing Metrics ---
+Number of responses received: 20/20
+Average Pick-Up Latency: 0.8106 seconds
+Average Processing Latency: 1.5932 seconds
+Average Total Latency (Send to Response): 2.4038 seconds
+Total Processing Time: 3.6271 seconds
+
+--- Processing Metrics ---
+Number of responses received: 20/20
+Average Pick-Up Latency: 1.0291 seconds
+Average Processing Latency: 1.8158 seconds
+Average Total Latency (Send to Response): 2.8450 seconds
+Total Processing Time: 4.1103 seconds

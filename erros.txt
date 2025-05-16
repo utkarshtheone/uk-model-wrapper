@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/app/main.py", line 64, in on_message
+    await message.channel.default_exchange.publish(
+AttributeError: 'Channel' object has no attribute 'default_exchange'
