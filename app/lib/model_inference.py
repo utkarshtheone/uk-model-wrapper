@@ -20,7 +20,6 @@ class ONNXModelWrapper:
         For this example, we'll assume the model expects a numpy array.
         Adjust the input and output processing based on your actual model.
         """
-        print(f"Running ONNX model inference on: {data}")
         logger.debug(f"Starting inference on: {data}")
         start = time.time()
         input_data = np.array([float(x) for x in str(data).split(',')], dtype=np.float32).reshape(1, -1)
