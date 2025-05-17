@@ -41,7 +41,7 @@ Follow these steps to set up and run the application on your local machine:
 
 5.  **Run the Worker Application:**
     ```bash
-    docker run -d --name worker --link --cpus 1 -m 512m rabbitmq:rabbitmq python-worker
+    docker run -d --name worker --link rabbitmq:rabbitmq --cpus=1 -m 512m python-worker
     ```
     This command will run the worker application within a Docker container named `worker`. The `--link` option ensures that the worker container can communicate with the RabbitMQ container using the hostname `rabbitmq`. You can view the logs of the worker application using:
     ```bash

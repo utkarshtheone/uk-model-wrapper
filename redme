@@ -1,5 +1,0 @@
-#checking git from this 
-
-docker run -d --name worker --link rabbitmq:rabbitmq --cpus=1 -m 512m python-worker
-
-docker run -d --name worker --link --cpus 1 -m 512m rabbitmq:rabbitmq python-worker
